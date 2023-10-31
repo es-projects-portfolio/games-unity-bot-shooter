@@ -1,0 +1,4 @@
+repository "Bot Shooter@eimanes@cloud"
+  path "/"
+    br "/main"
+    co "/main"

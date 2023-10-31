@@ -1,0 +1,21 @@
+image: gableroux/unity3d:latest
+
+stages:
+  - build
+
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    - Library/
+
+build:
+  stage: build
+  script:
+    - echo "Starting WebGL build process"
+    - chmod +x ./Scripts/BuildWebGL.sh
+    - ./Scripts/BuildWebGL.sh
+  artifacts:
+    paths:
+      - BUILD/
+  only:
+    - main
